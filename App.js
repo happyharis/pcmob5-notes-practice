@@ -3,8 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, StatusBar, StyleSheet, View } from "react-native";
-import LoginScreen, { LOGIN_SCREEN } from "./screens/LoginScreen";
-import ProfileScreen, { PROFILE_SCREEN } from "./screens/ProfileScreen";
+import LoginScreen from "./screens/LoginScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import { LOGIN_SCREEN, PROFILE_SCREEN } from "./constants";
 const Stack = createStackNavigator();
 
 export default function App() {
