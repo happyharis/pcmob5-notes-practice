@@ -1,7 +1,8 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { LOGIN_SCREEN } from "./LoginScreen";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { LOGIN_SCREEN } from "../constants";
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
@@ -16,6 +17,7 @@ export default function ProfileScreen() {
         style={styles.button}
         onPress={() => {
           navigation.navigate(LOGIN_SCREEN);
+          AsyncStorage.removeItem("token");
         }}
       >
         <Text style={styles.buttonText}>Logout</Text>
@@ -23,8 +25,6 @@ export default function ProfileScreen() {
     </View>
   );
 }
-
-export const PROFILE_SCREEN = "PROFILE_SCREEN";
 
 const styles = StyleSheet.create({
   container: {
