@@ -25,7 +25,9 @@ export default function ProfileScreen() {
   }
 
   useEffect(() => {
+    const removeListener = navigation.addListener("focus", loadUsername);
     loadUsername();
+    return removeListener;
   }, []);
 
   return (
@@ -40,6 +42,7 @@ export default function ProfileScreen() {
         onPress={() => {
           navigation.navigate(LOGIN_SCREEN);
           AsyncStorage.removeItem("token");
+          setUsername("loading...");
         }}
       >
         <Text style={styles.buttonText}>Logout</Text>
