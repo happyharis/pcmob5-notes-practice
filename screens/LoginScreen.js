@@ -45,6 +45,7 @@ export default function LoginScreen() {
       <Text style={styles.title}>Welcome</Text>
       <Text style={styles.title}>Hello</Text>
 
+
       <TextInput
         style={styles.inputView}
         placeholder="Email"
