@@ -42,6 +42,7 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login to your account</Text>
+      <Text style={styles.title}>Welcome</Text>
 
       <TextInput
         style={styles.inputView}
